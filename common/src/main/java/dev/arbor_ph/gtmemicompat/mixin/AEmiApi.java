@@ -1,4 +1,4 @@
-package dev.arbor_ph.gtmemicompat.mixin.fabric;
+package dev.arbor_ph.gtmemicompat.mixin;
 
 import dev.emi.emi.api.EmiApi;
 import dev.emi.emi.api.recipe.EmiRecipe;

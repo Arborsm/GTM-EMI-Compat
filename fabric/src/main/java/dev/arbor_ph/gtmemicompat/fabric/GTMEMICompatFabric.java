@@ -7,6 +7,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
+
 @Environment(EnvType.CLIENT)
 public final class GTMEMICompatFabric implements ModInitializer, ClientModInitializer, EmiPlugin {
     @Override
@@ -15,7 +16,6 @@ public final class GTMEMICompatFabric implements ModInitializer, ClientModInitia
     }
     @Override
     public void register(EmiRegistry registry) {
-        GTEmiOreProcessingV2.register(registry);
     }
     @Override
     public void onInitializeClient() {

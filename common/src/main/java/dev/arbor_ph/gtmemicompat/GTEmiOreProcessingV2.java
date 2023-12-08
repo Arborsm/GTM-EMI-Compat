@@ -1,4 +1,4 @@
-package dev.arbor_ph.gtmemicompat.fabric;
+package dev.arbor_ph.gtmemicompat;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;

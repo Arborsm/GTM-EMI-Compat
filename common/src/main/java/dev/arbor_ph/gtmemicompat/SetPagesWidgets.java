@@ -1,6 +1,6 @@
-package dev.arbor_ph.gtmemicompat.fabric;
+package dev.arbor_ph.gtmemicompat;
 
-import dev.arbor_ph.gtmemicompat.mixin.fabric.AEmiApi;
+import dev.arbor_ph.gtmemicompat.mixin.AEmiApi;
 import dev.emi.emi.api.recipe.EmiRecipe;
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
 import dev.emi.emi.api.stack.EmiIngredient;
@@ -10,7 +10,6 @@ import dev.emi.emi.runtime.EmiSidebars;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.ArrayList;
