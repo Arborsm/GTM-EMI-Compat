@@ -11,7 +11,6 @@ import dev.emi.emi.api.recipe.VanillaEmiRecipeCategories;
 import dev.emi.emi.api.stack.EmiStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-
 @Mixin(value = GTEMIPlugin.class, remap = false)
 public class GTMEmiRewrite {
     /**

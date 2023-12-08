@@ -6,7 +6,6 @@
   "mixins": [
   ],
   "client": [
-    "MGTOreProcessingEmiCategory"
   ],
   "injectors": {
     "defaultRequire": 1
