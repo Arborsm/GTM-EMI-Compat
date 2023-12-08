@@ -5,7 +5,11 @@ dependencies {
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury:${rootProject.architectury_version}"
     modCompileOnly("com.gregtechceu.gtceu:gtceu-common-${minecraft_version}:${gtCeuVersion}"){ transitive = false }
+    modCompileOnly("com.lowdragmc.ldlib:ldlib-common-${minecraft_version}:${ldLibVersion}") { transitive = false }
+    compileOnlyApi(annotationProcessor("org.projectlombok:lombok:$lombok"))
+
     modCompileOnly "dev.emi:emi-xplat-intermediary:${emiVersion}:api"
+    modCompileOnly "dev.emi:emi-fabric:$emiVersion"
 }
 
 architectury {
