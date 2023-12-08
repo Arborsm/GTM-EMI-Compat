@@ -147,6 +147,7 @@ public class GTEmiOreProcessingV2 implements EmiRecipe {
     private final List<EmiStack> outputs = new ArrayList<>();
     private final List<EmiIngredient> catalysts;
     private final EmiIngredient ore;
+    private final EmiStack rawOre;
     private final EmiStack smelt;
     private final EmiStack crushed;
     private final EmiStack crushed2;
@@ -188,7 +189,8 @@ public class GTEmiOreProcessingV2 implements EmiRecipe {
         }
         ore = EmiIngredient.of(oreStacks.stream().map(EmiStack::of).toList());
         inputs.add(getOre());
-        inputs.add(EmiStack.of(ChemicalHelper.get(TagPrefix.rawOre, material)));
+        rawOre = EmiStack.of(ChemicalHelper.get(TagPrefix.rawOre, material));
+        inputs.add(getRawOre());
         //crushed
         crushed = EmiStack.of(ChemicalHelper.get(TagPrefix.crushed, material));
         inputs.add(getCrushed());
@@ -325,7 +327,8 @@ public class GTEmiOreProcessingV2 implements EmiRecipe {
     public void addWidgets(WidgetHolder widgets) {
         widgets.addTexture(BASE, 0, 0);
         MutableComponent boost085 = getTierBoostText(0.085);
-        widgets.addSlot(STONE_DUSTS, 18 + 25 + 18 + 9, 0).recipeContext(this);
+        widgets.addSlot(STONE_DUSTS, 18 + 25 + 18 + 4, 0).recipeContext(this);
+        widgets.addSlot(getRawOre(), 18 + 25 + 18 + 4 + 18 + 4, 0);
         //ore --macerator-> crushed
         {
             widgets.addSlot(getOre(), 0, 0);
@@ -399,7 +402,7 @@ public class GTEmiOreProcessingV2 implements EmiRecipe {
                 stacks.addAll(recipe.getOutputs());
             }
             int height = 25 + 18 * 2;
-            widgets.add(new SetPagesWidgets(new Bounds(x-4, 77-4, 18+4, height), Map.of(category, new ArrayList<>(recipes)), stacks, 20-1, 89-1, List.of(18 + 1, 18 + 5, 9 + 18, 4 + 18 + 1,-height-1,-18-9,16,-18-1)));
+            widgets.add(new SetPagesWidgets(new Bounds(x - 4, 77 - 4, 18 + 4, height), Map.of(category, new ArrayList<>(recipes)), stacks, 20 - 1, 89 - 1, List.of(18 + 1, 18 + 5, 9 + 18, 4 + 18 + 1, -height - 1, -18 - 9, 16, -18 - 1)));
         }
         //crushedPurified --macerator-> dustPure
         widgets.addSlot(getWorkstations(MACERATOR_RECIPES), 111, 44).drawBack(false);
