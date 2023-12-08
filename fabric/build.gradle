@@ -23,6 +23,16 @@ dependencies {
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
+
+    modImplementation("com.terraformersmc:modmenu:$modmenu")
+    modImplementation("dev.emi:emi-fabric:$emiVersion")
+    compileOnlyApi(annotationProcessor("org.projectlombok:lombok:$lombok"))
+    modImplementation("com.gregtechceu.gtceu:gtceu-fabric-${minecraft_version}:${gtCeuVersion}") { transitive = false }
+    modImplementation("com.lowdragmc.ldlib:ldlib-fabric-${minecraft_version}:${ldLibVersion}") { transitive = false }
+    modImplementation("com.tterrag.registrate_fabric:Registrate:${registrateFabricVersion}") {
+        exclude(module:"mixinextras-fabric")
+    }
+    modImplementation("dev.toma.configuration:configuration-fabric-1.20.1:2.2.0")
 }
 
 processResources {

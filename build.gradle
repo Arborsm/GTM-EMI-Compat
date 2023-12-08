@@ -53,6 +53,13 @@ allprojects {
             name = "TerraformersMC"
             url = "https://maven.terraformersmc.com/"
         }
+        maven {
+            url = "https://mvn.devos.one/snapshots/"
+            content {
+                includeGroup("com.tterrag.registrate_fabric")
+                includeGroup("io.github.fabricators_of_create.Porting-Lib")
+            }
+        }
     }
 
     tasks.withType(JavaCompile) {

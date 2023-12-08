@@ -12,7 +12,11 @@
   "icon": "icon.png",
 
   "environment": "*",
-  "entrypoints": {},
+  "entrypoints": {
+    "main": ["dev.arbor_ph.gtmemicompat.fabric.GTMEMICompatFabric"],
+    "client": ["dev.arbor_ph.gtmemicompat.fabric.GTMEMICompatFabric"],
+    "emi": ["dev.arbor_ph.gtmemicompat.fabric.GTMEMICompatFabric"]
+  },
   "mixins": [
     "gtm_emi_compat.mixins.json",
     "gtm_emi_compat-common.mixins.json"

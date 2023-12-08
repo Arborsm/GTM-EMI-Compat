@@ -1,11 +1,24 @@
 package dev.arbor_ph.gtmemicompat.fabric;
 
 import dev.arbor_ph.gtmemicompat.GTMEMICompat;
+import dev.emi.emi.api.EmiPlugin;
+import dev.emi.emi.api.EmiRegistry;
+import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
-
-public class GTMEMICompatFabric implements ModInitializer {
+@Environment(EnvType.CLIENT)
+public final class GTMEMICompatFabric implements ModInitializer, ClientModInitializer, EmiPlugin {
     @Override
     public void onInitialize() {
         GTMEMICompat.init();
+    }
+    @Override
+    public void register(EmiRegistry registry) {
+        GTEmiOreProcessingV2.register(registry);
+    }
+    @Override
+    public void onInitializeClient() {
+
     }
 }
