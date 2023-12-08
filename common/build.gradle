@@ -17,6 +17,7 @@ architectury {
 
 publishing {
     publications {
+        //noinspection GroovyAssignabilityCheck
         mavenCommon(MavenPublication) {
             artifactId = rootProject.archives_base_name
             from components.java
