@@ -15,7 +15,7 @@
   "entrypoints": {
     "main": ["dev.arbor_ph.gtmemicompat.fabric.GTMEMICompatFabric"],
     "client": ["dev.arbor_ph.gtmemicompat.fabric.GTMEMICompatFabric"],
-    "emi": ["dev.arbor_ph.gtmemicompat.fabric.GTMEMICompatFabric"]
+    "emi": ["dev.arbor_ph.gtmemicompat.GTMEMICompatEmiPlugin"]
   },
   "mixins": [
     "gtm_emi_compat.mixins.json",

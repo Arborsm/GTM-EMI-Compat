@@ -1,5 +1,6 @@
 package dev.arbor_ph.gtmemicompat.fabric;
 
+import dev.arbor_ph.gtmemicompat.GTEmiOreProcessingV2;
 import dev.arbor_ph.gtmemicompat.GTMEMICompat;
 import dev.emi.emi.api.EmiPlugin;
 import dev.emi.emi.api.EmiRegistry;
@@ -16,6 +17,7 @@ public final class GTMEMICompatFabric implements ModInitializer, ClientModInitia
     }
     @Override
     public void register(EmiRegistry registry) {
+
     }
     @Override
     public void onInitializeClient() {

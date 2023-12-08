@@ -14,30 +14,30 @@ import org.spongepowered.asm.mixin.Overwrite;
 
 @Mixin(value = GTEMIPlugin.class, remap = false)
 public class GTMEmiRewrite {
-    /**
-     @author Arbor
-     @reason 重写
-     */
-    @Overwrite
-    public void register(EmiRegistry registry) {
-        registry.addCategory(GTOreProcessingEmiCategory.CATEGORY);
-        registry.addCategory(MultiblockInfoEmiCategory.CATEGORY);
-        // recipes
-        MultiblockInfoEmiCategory.registerDisplays(registry);
-        // workstations
-        MultiblockInfoEmiCategory.registerWorkStations(registry);
-        // workstations
-        for (MachineDefinition definition : GTMachines.ELECTRIC_FURNACE) {
-            if (definition != null) {
-                registry.addWorkstation(VanillaEmiRecipeCategories.SMELTING, EmiStack.of(definition.asStack()));
-            }
-        }
-        registry.addWorkstation(VanillaEmiRecipeCategories.SMELTING, EmiStack.of(GTMachines.STEAM_FURNACE.left().asStack()));
-        registry.addWorkstation(VanillaEmiRecipeCategories.SMELTING, EmiStack.of(GTMachines.STEAM_FURNACE.right().asStack()));
-        registry.addWorkstation(VanillaEmiRecipeCategories.SMELTING, EmiStack.of(GTMachines.STEAM_OVEN.asStack()));
-        registry.addWorkstation(VanillaEmiRecipeCategories.SMELTING, EmiStack.of(GTMachines.MULTI_SMELTER.asStack()));
-
-        // rewrite
-        GTEmiOreProcessingV2.register(registry);
-    }
+    ///**
+    // @author Arbor
+    // @reason 重写
+    // */
+    //@Overwrite
+    //public void register(EmiRegistry registry) {
+    //    registry.addCategory(GTOreProcessingEmiCategory.CATEGORY);
+    //    registry.addCategory(MultiblockInfoEmiCategory.CATEGORY);
+    //    // recipes
+    //    MultiblockInfoEmiCategory.registerDisplays(registry);
+    //    // workstations
+    //    MultiblockInfoEmiCategory.registerWorkStations(registry);
+    //    // workstations
+    //    for (MachineDefinition definition : GTMachines.ELECTRIC_FURNACE) {
+    //        if (definition != null) {
+    //            registry.addWorkstation(VanillaEmiRecipeCategories.SMELTING, EmiStack.of(definition.asStack()));
+    //        }
+    //    }
+    //    registry.addWorkstation(VanillaEmiRecipeCategories.SMELTING, EmiStack.of(GTMachines.STEAM_FURNACE.left().asStack()));
+    //    registry.addWorkstation(VanillaEmiRecipeCategories.SMELTING, EmiStack.of(GTMachines.STEAM_FURNACE.right().asStack()));
+    //    registry.addWorkstation(VanillaEmiRecipeCategories.SMELTING, EmiStack.of(GTMachines.STEAM_OVEN.asStack()));
+    //    registry.addWorkstation(VanillaEmiRecipeCategories.SMELTING, EmiStack.of(GTMachines.MULTI_SMELTER.asStack()));
+    //
+    //    // rewrite
+    //
+    //}
 }

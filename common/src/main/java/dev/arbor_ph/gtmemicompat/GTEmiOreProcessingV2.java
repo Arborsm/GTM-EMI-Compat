@@ -62,7 +62,6 @@ public class GTEmiOreProcessingV2 implements EmiRecipe {
     public static final EmiIngredient CAULDRON;
     public static final EmiStack WATER = EmiStack.of(Fluids.WATER, FluidHelper.getBucket());//EmiIngredient.of(List.of(EmiStack.of(Fluids.WATER, FluidHelper.getBucket()),EmiStack.of(GTMaterials.DistilledWater.getFluid(),FluidHelper.getBucket() / 10)));
     public static final EmiStack DISTILL_WATER = EmiStack.of(GTMaterials.DistilledWater.getFluid(), FluidHelper.getBucket() / 10);
-    public static final LoadingCache<Set<GTRecipeType>, Collection<EmiStack>> MACHINES_CACHE = CacheBuilder.newBuilder().build(CacheLoader.from(GTEmiOreProcessingV2::getMachines));
     public static final LoadingCache<Set<GTRecipeType>, List<EmiIngredient>> CATALYSTS_CACHE = CacheBuilder.newBuilder().build(CacheLoader.from(GTEmiOreProcessingV2::getCatalysts));
     static {
         //PERCENT_FORMAT
