@@ -6,6 +6,7 @@ dependencies {
     modApi "dev.architectury:architectury:${rootProject.architectury_version}"
     modCompileOnly("com.gregtechceu.gtceu:gtceu-common-${minecraft_version}:${gtCeuVersion}"){ transitive = false }
     modCompileOnly "dev.emi:emi-xplat-intermediary:${emiVersion}:api"
+    modCompileOnly "dev.emi:emi-fabric:$emiVersion"
 }
 
 architectury {
