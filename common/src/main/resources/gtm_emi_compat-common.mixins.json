@@ -1,11 +1,14 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "dev.arbor_ph.gtm_emi_compat.mixin.forge",
+  "package": "dev.arbor_ph.gtmemicompat.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "GTMEmiRewrite",
+    "MGTOreProcessingEmiCategory"
   ],
   "client": [
+    "AEmiApi"
   ],
   "injectors": {
     "defaultRequire": 1

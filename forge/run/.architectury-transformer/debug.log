@@ -128,35 +128,42 @@
 [Architectury Transformer DEBUG]  - D:\Arbor\JAVA\Minecraft\GTM EMI Compat\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40359_v2_forge_1_20_1_47_2_0_forge\com\tterrag\registrate\Registrate\MC1.20-1.3.11\Registrate-MC1.20-1.3.11.jar
 [Architectury Transformer DEBUG]  - D:\Arbor\JAVA\Minecraft\GTM EMI Compat\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40359_v2_forge_1_20_1_47_2_0_forge\dev\toma\configuration\configuration-forge-1.20.1\2.2.0\configuration-forge-1.20.1-2.2.0.jar
 [Architectury Transformer DEBUG]  - D:\Arbor\JAVA\Minecraft\GTM EMI Compat\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40359_v2_forge_1_20_1_47_2_0_forge\dev\emi\emi-forge\1.0.24+1.20.1\emi-forge-1.0.24+1.20.1.jar
-[Architectury Transformer] Read classpath in 1.889 s
+[Architectury Transformer] Read classpath in 1.877 s
 [Architectury Transformer DEBUG] Closed File Systems for D:\Arbor\JAVA\Minecraft\GTM EMI Compat\common\build\devlibs\GTM-EMI-Compat-1.0-dev.jar
-[Architectury Transformer DEBUG] Transforming 8 transformer(s) from D:\Arbor\JAVA\Minecraft\GTM EMI Compat\common\build\devlibs\GTM-EMI-Compat-1.0-dev.jar to C:\Users\26537\AppData\Local\Temp\10451923408501638115.jar: 
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@6c9f5c0d
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@de3a06f
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@76b10754
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@2bea5ab4
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeAnnotations@3d8314f0
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment@2df32bf7
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeForgeMod@530612ba
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.FixForgeMixin@2a40cd94
-[Architectury Transformer DEBUG] Transforming from D:\Arbor\JAVA\Minecraft\GTM EMI Compat\common\build\devlibs\GTM-EMI-Compat-1.0-dev.jar to C:\Users\26537\AppData\Local\Temp\10451923408501638115.jar with 8 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
+[Architectury Transformer DEBUG] Transforming 8 transformer(s) from D:\Arbor\JAVA\Minecraft\GTM EMI Compat\common\build\devlibs\GTM-EMI-Compat-1.0-dev.jar to C:\Users\26537\AppData\Local\Temp\9958143181119837102.jar: 
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@46238e3f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@6e2c9341
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@32464a14
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@4e4aea35
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeAnnotations@1442d7b5
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment@1efee8e7
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeForgeMod@1ee807c6
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.FixForgeMixin@76a4d6c
+[Architectury Transformer DEBUG] Transforming from D:\Arbor\JAVA\Minecraft\GTM EMI Compat\common\build\devlibs\GTM-EMI-Compat-1.0-dev.jar to C:\Users\26537\AppData\Local\Temp\9958143181119837102.jar with 8 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$146/0x000001fd810ce128@6ee12bac
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$146/0x0000028aa80ce128@341b80b2
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/arbor_ph/gtmemicompat/GTEmiOreProcessingV2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/arbor_ph/gtmemicompat/SetPagesWidgets with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing dev/arbor_ph/gtmemicompat/GTMEMICompat with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/arbor_ph/gtmemicompat/mixin/GTMEmiRewrite with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/arbor_ph/gtmemicompat/mixin/AEmiApi with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing dev/arbor_ph/gtmemicompat/mixin/MGTOreProcessingEmiCategory with maxs=true frames=true
+[Architectury Transformer DEBUG] Checking whether /GTM-EMI-Compat-common-refmap.json is a mixin config.
 [Architectury Transformer DEBUG] Checking whether /gtm_emi_compat-common.mixins.json is a mixin config.
+[Architectury Transformer DEBUG] Checking whether /GTM-EMI-Compat-common-refmap.json is a mixin config.
 [Architectury Transformer DEBUG] Checking whether /gtm_emi_compat-common.mixins.json is a mixin config.
 [Architectury Transformer DEBUG] Found mixin config(s): gtm_emi_compat-common.mixins.json
 [Architectury Transformer DEBUG] Appended Launch Argument: [--mixin.config, gtm_emi_compat-common.mixins.json]
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: GTM-EMI-Compat-forge-refmap.json
-[Architectury Transformer DEBUG] Closed File Systems for C:\Users\26537\AppData\Local\Temp\10451923408501638115.jar
+[Architectury Transformer DEBUG] Closed File Systems for C:\Users\26537\AppData\Local\Temp\9958143181119837102.jar
 [Architectury Transformer] Listening at D:\Arbor\JAVA\Minecraft\GTM EMI Compat\common\build\devlibs\GTM-EMI-Compat-1.0-dev.jar
 [Architectury Transformer DEBUG] Transforming from dev/arbor_ph/gtmemicompat/GTMEMICompat.class to dev/arbor_ph/gtmemicompat/GTMEMICompat.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$146/0x000001fd810ce128@6ee12bac
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$146/0x0000028aa80ce128@341b80b2
 [Architectury Transformer DEBUG] Remapping with Dirty Mappings...
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
@@ -164,4 +171,34 @@
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing dev/arbor_ph/gtmemicompat/GTMEMICompat with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: GTM-EMI-Compat-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed dev/arbor_ph/gtmemicompat/GTMEMICompat in 135.4 ms
+[Architectury Transformer DEBUG] Transformed dev/arbor_ph/gtmemicompat/GTMEMICompat in 137.8 ms
+[Architectury Transformer DEBUG] Transforming from dev/arbor_ph/gtmemicompat/mixin/AEmiApi.class to dev/arbor_ph/gtmemicompat/mixin/AEmiApi.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$146/0x0000028aa80ce128@341b80b2
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/arbor_ph/gtmemicompat/mixin/AEmiApi with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: GTM-EMI-Compat-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/arbor_ph/gtmemicompat/mixin/AEmiApi in 31.43 ms
+[Architectury Transformer DEBUG] Transforming from dev/arbor_ph/gtmemicompat/GTEmiOreProcessingV2.class to dev/arbor_ph/gtmemicompat/GTEmiOreProcessingV2.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$146/0x0000028aa80ce128@341b80b2
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/arbor_ph/gtmemicompat/GTEmiOreProcessingV2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: GTM-EMI-Compat-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/arbor_ph/gtmemicompat/GTEmiOreProcessingV2 in 43.13 ms
+[Architectury Transformer DEBUG] Transforming from dev/arbor_ph/gtmemicompat/SetPagesWidgets.class to dev/arbor_ph/gtmemicompat/SetPagesWidgets.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$146/0x0000028aa80ce128@341b80b2
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing dev/arbor_ph/gtmemicompat/SetPagesWidgets with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: GTM-EMI-Compat-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed dev/arbor_ph/gtmemicompat/SetPagesWidgets in 24.39 ms
