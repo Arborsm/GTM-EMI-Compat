@@ -1,5 +1,6 @@
-package dev.arbor_ph.gtmemicompat.mixin.fabric;
+package dev.arbor_ph.gtmemicompat.mixin;
 
+import dev.arbor_ph.gtmemicompat.PlatformUtils;
 import dev.emi.emi.api.recipe.EmiPlayerInventory;
 import dev.emi.emi.api.stack.EmiStack;
 import net.minecraft.world.item.ItemStack;
@@ -10,43 +11,25 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(value = EmiPlayerInventory.class, remap = false)
 class MEmiPlayerInventory {
-    private static long checkDamage(EmiStack emiStack) {
+    private static int getDamageAmount(EmiStack emiStack, boolean damage) {
         ItemStack itemStack = emiStack.getItemStack();
         if (!itemStack.isEmpty()) {
-            ItemStack remainder = itemStack.getRecipeRemainder();
-            int damage0 = itemStack.getDamageValue();
+            ItemStack newItemStack = itemStack.getItem().getDefaultInstance();
+            ItemStack remainder = PlatformUtils.getRecipeRemainder(newItemStack);
+            int damage0 = newItemStack.getDamageValue();
             int damage1 = remainder.getDamageValue();
-            if (!remainder.isEmpty() && remainder.is(itemStack.getItem()) && damage0 != damage1) {
-                return (long) itemStack.getMaxDamage() << 32 | (damage1 - damage0);
+            int dDamage = damage1 - damage0;
+            if (!remainder.isEmpty() && remainder.is(newItemStack.getItem()) && damage0 != damage1) {
+                return damage ? dDamage : (itemStack.getMaxDamage() - itemStack.getDamageValue()) / (dDamage);
             }
         }
         return 0;
     }
     private static int getDamage(EmiStack emiStack) {
-        ItemStack itemStack = emiStack.getItemStack();
-        ItemStack newItemStack = itemStack.getItem().getDefaultInstance();
-        if (!newItemStack.isEmpty()) {
-            ItemStack remainder = newItemStack.getRecipeRemainder();
-            int damage0 = newItemStack.getDamageValue();
-            int damage1 = remainder.getDamageValue();
-            if (!remainder.isEmpty() && remainder.is(newItemStack.getItem()) && damage0 != damage1) {
-                return damage1 - damage0;
-            }
-        }
-        return 0;
+        return getDamageAmount(emiStack, true);
     }
     private static int getAmount(EmiStack emiStack) {
-        ItemStack itemStack = emiStack.getItemStack();
-        ItemStack newItemStack = itemStack.getItem().getDefaultInstance();
-        if (!newItemStack.isEmpty()) {
-            ItemStack remainder = newItemStack.getRecipeRemainder();
-            int damage0 = newItemStack.getDamageValue();
-            int damage1 = remainder.getDamageValue();
-            if (!remainder.isEmpty() && remainder.is(newItemStack.getItem()) && damage0 != damage1) {
-                return (itemStack.getMaxDamage() - itemStack.getDamageValue()) / (damage1 - damage0);
-            }
-        }
-        return 0;
+        return getDamageAmount(emiStack, false);
     }
     @Redirect(method = "addStack(Ldev/emi/emi/api/stack/EmiStack;)V", at = @At(value = "INVOKE", target = "Ldev/emi/emi/api/stack/EmiStack;getAmount()J"))
     private long getRestDamageAmount(EmiStack emiStack) {

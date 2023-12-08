@@ -26,7 +26,6 @@ dependencies {
 
     modImplementation("com.terraformersmc:modmenu:$modmenu")
     modImplementation("dev.emi:emi-fabric:$emiVersion")
-    compileOnlyApi(annotationProcessor("org.projectlombok:lombok:$lombok"))
     modImplementation("com.gregtechceu.gtceu:gtceu-fabric-${minecraft_version}:${gtCeuVersion}") { transitive = false }
     modImplementation("com.lowdragmc.ldlib:ldlib-fabric-${minecraft_version}:${ldLibVersion}") { transitive = false }
     modImplementation("com.tterrag.registrate_fabric:Registrate:${registrateFabricVersion}") {

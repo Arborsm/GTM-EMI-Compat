@@ -6,7 +6,6 @@
   "mixins": [
   ],
   "client": [
-    "MEmiPlayerInventory"
   ],
   "injectors": {
     "defaultRequire": 1
