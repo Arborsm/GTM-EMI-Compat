@@ -186,9 +186,9 @@ public class GTCompressorEmiRecipe implements EmiRecipe {
         int outputsRowSize = rowSize - inputsRowSize;
         int slotsColumnSize = Math.max((inputsSize + inputsRowSize - 1) / inputsRowSize, (outputsSize + outputsRowSize - 1) / outputsRowSize);
         int displayHeight = Math.max(textHeight + EmiTexture.SLOT.height, EmiTexture.SLOT.height * slotsColumnSize);
-        int y = (displayHeight - EmiTexture.SLOT.height * slotsColumnSize) / 2;
+        int slotsY = (displayHeight - EmiTexture.SLOT.height * slotsColumnSize) / 2;
         for (int i = 0; i < inputsSize; i++) {
-            addSlot(widgets, getInputs().get(i), x + i % inputsRowSize * EmiTexture.SLOT.width, y + i / inputsRowSize * EmiTexture.SLOT.height);
+            addSlot(widgets, getInputs().get(i), x + i % inputsRowSize * EmiTexture.SLOT.width, slotsY + i / inputsRowSize * EmiTexture.SLOT.height);
         }
         int duration = gtRecipe.duration;
         List<Component> texts = new ArrayList<>(4);
@@ -205,20 +205,19 @@ public class GTCompressorEmiRecipe implements EmiRecipe {
         }
         int middleWidth = Math.max(EmiTexture.FULL_ARROW.width, texts.stream().mapToInt(textRenderer::width).max().orElseThrow());
         x += inputsRowSize * EmiTexture.SLOT.width;
-        y = (displayHeight - EmiTexture.FULL_ARROW.height) / 2;
-        widgets.addFillingArrow(x + (middleWidth - EmiTexture.FULL_ARROW.width) / 2, y, duration * 50);
-        y = Math.max(0, (displayHeight - textHeight * texts.size()) / 2);
+        widgets.addFillingArrow(x + (middleWidth - EmiTexture.FULL_ARROW.width) / 2, (displayHeight - EmiTexture.FULL_ARROW.height) / 2, duration * 50);
+        int textsY = Math.max(0, (displayHeight - textHeight * texts.size()) / 2);
         for (var iterator = texts.listIterator(); iterator.hasNext(); ) {
             int i = iterator.nextIndex();
             Component text = iterator.next();
-            widgets.addText(text, x, y + textHeight * i, 0xFF555555, false);
+            widgets.addText(text, x, textsY + textHeight * i, 0xFF555555, false);
         }
         x += middleWidth;
         for (int i = 0; i < outputsSize; i++) {
-            addSlot(widgets, getOutputs().get(i), x + i % outputsRowSize * EmiTexture.SLOT.width, y + i / outputsRowSize * EmiTexture.SLOT.height);
+            addSlot(widgets, getOutputs().get(i), x + i % outputsRowSize * EmiTexture.SLOT.width, slotsY + i / outputsRowSize * EmiTexture.SLOT.height);
         }
-        y = (displayHeight - EmiTexture.SLOT.height - textHeight) / 2;
-        widgets.addSlot(EmiIngredient.of(getCatalysts()), 0, y).drawBack(false);
-        widgets.addText(Component.literal(tierText), 0, y + EmiTexture.SLOT.height, -1, false);
+        int machineY = (displayHeight - EmiTexture.SLOT.height - textHeight) / 2;
+        widgets.addSlot(EmiIngredient.of(getCatalysts()), 0, machineY).drawBack(false);
+        widgets.addText(Component.literal(tierText), 0, machineY + EmiTexture.SLOT.height, -1, false);
     }
 }
