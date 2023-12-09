@@ -89,25 +89,36 @@ public class GTEmiOreProcessingV2 implements EmiRecipe {
         return EmiIngredient.of(EmiApi.getRecipeManager().getWorkstations(category));
     }
     public static EmiIngredient getWorkstations(GTRecipeType recipeType) {
-        return getWorkstations(GTRecipeTypeEmiCategory.CATEGORIES.apply(recipeType));
+        Set<EmiIngredient> stacks = new LinkedHashSet<>();
+        stacks.add(getWorkstations(GTRecipeTypeEmiCategory.CATEGORIES.apply(recipeType)));
+        for (MachineDefinition definition : GTMEMICompatEmiPlugin.RECIPE_MACHINES.get(recipeType)) {
+            stacks.add(EmiStack.of(definition.asStack()));
+        }
+        return EmiIngredient.of(new ArrayList<>(stacks));
     }
     public static MutableComponent getTierBoostText(double boostPerTier) {
         return Component.translatable("gtceu.gui.content.tier_boost", PERCENT_FORMAT.format(boostPerTier));
     }
     public static List<EmiStack> getMachines(Iterable<GTRecipeType> validTypes) {
-        List<EmiStack> list = new ArrayList<>();
         Set<MachineDefinition> set = new HashSet<>();
-        for (MachineDefinition machine : GTRegistries.MACHINES) {
-            if (machine.getRecipeTypes() == null) continue;
-            for (GTRecipeType type : machine.getRecipeTypes()) {
-                for (GTRecipeType validType : validTypes) {
-                    if (type == validType && !set.contains(machine)) {
-                        set.add(machine);
-                        list.add(EmiStack.of(machine.asStack()));
-                    }
-                }
-            }
+        for (GTRecipeType validType : validTypes) {
+            set.addAll(GTMEMICompatEmiPlugin.RECIPE_MACHINES.get(validType));
         }
+        List<EmiStack> list = new ArrayList<>();
+        for (MachineDefinition definition : set) {
+            list.add(EmiStack.of(definition.asStack()));
+        }
+        //for (MachineDefinition machine : GTRegistries.MACHINES) {
+        //    if (machine.getRecipeTypes() == null) continue;
+        //    for (GTRecipeType type : machine.getRecipeTypes()) {
+        //        for (GTRecipeType validType : validTypes) {
+        //            if (type == validType && !set.contains(machine)) {
+        //                set.add(machine);
+        //                list.add(EmiStack.of(machine.asStack()));
+        //            }
+        //        }
+        //    }
+        //}
         return list;
     }
     public static List<EmiIngredient> getCatalysts(Set<GTRecipeType> validTypes) {
@@ -117,10 +128,7 @@ public class GTEmiOreProcessingV2 implements EmiRecipe {
             catalysts.add(EmiStack.of(Items.FURNACE));
         }
         catalysts.addAll(getMachines(validTypes));
-        //because of the search mechanism of EMI, we have to pack all workstations into one EmiIngredient
-        EmiIngredient catalyst = EmiIngredient.of(catalysts);
-        catalysts.clear();
-        catalysts.add(catalyst);
+        GTMEMICompatEmiPlugin.normalizeCatalysts(catalysts);
         return catalysts;
     }
     public static TankWidget addTank(WidgetHolder widgets, EmiIngredient stack, int x, int y) {

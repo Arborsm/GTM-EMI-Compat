@@ -4,12 +4,13 @@
   "package": "dev.arbor_ph.gtmemicompat.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "AEmiApi",
+    "MEmiPlayerInventory",
+    "MGTRecipeTypeEmiCategory",
     "GTMEmiRewrite",
     "MGTOreProcessingEmiCategory"
   ],
   "client": [
-    "AEmiApi",
-    "MEmiPlayerInventory"
   ],
   "injectors": {
     "defaultRequire": 1
