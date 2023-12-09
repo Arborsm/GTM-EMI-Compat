@@ -1,5 +1,7 @@
 package dev.arbor_ph.gtmemicompat;
 
+import com.google.common.base.Predicates;
+import com.google.common.base.Suppliers;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.FluidRecipeCapability;
 import com.gregtechceu.gtceu.api.capability.recipe.ItemRecipeCapability;
@@ -19,6 +21,7 @@ import dev.emi.emi.api.recipe.EmiRecipeCategory;
 import dev.emi.emi.api.render.EmiTexture;
 import dev.emi.emi.api.stack.EmiIngredient;
 import dev.emi.emi.api.stack.EmiStack;
+import dev.emi.emi.api.widget.ButtonWidget;
 import dev.emi.emi.api.widget.SlotWidget;
 import dev.emi.emi.api.widget.WidgetHolder;
 import net.minecraft.client.Minecraft;
@@ -29,11 +32,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.material.Fluid;
 import org.jetbrains.annotations.NotNull;
+import org.lwjgl.glfw.GLFW;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 
 public class GTCompressorEmiRecipe implements EmiRecipe {
     public static final int MAX_WIDTH = 134;
@@ -214,10 +219,11 @@ public class GTCompressorEmiRecipe implements EmiRecipe {
         }
         x += middleWidth;
         for (int i = 0; i < outputsSize; i++) {
-            addSlot(widgets, getOutputs().get(i), x + i % outputsRowSize * EmiTexture.SLOT.width, slotsY + i / outputsRowSize * EmiTexture.SLOT.height);
+            addSlot(widgets, getOutputs().get(i), x + i % outputsRowSize * EmiTexture.SLOT.width, slotsY + i / outputsRowSize * EmiTexture.SLOT.height).recipeContext(this);
         }
         int machineY = (displayHeight - EmiTexture.SLOT.height - textHeight) / 2;
         widgets.addSlot(EmiIngredient.of(getCatalysts()), 0, machineY).drawBack(false);
-        widgets.addText(Component.literal(tierText), 0, machineY + EmiTexture.SLOT.height, -1, false);
+        int tierY = machineY + EmiTexture.SLOT.height;
+        widgets.addText(Component.literal(tierText), 0, tierY, -1, false);
     }
 }
