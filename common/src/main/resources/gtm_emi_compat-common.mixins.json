@@ -3,14 +3,9 @@
   "minVersion": "0.8",
   "package": "dev.arbor_ph.gtmemicompat.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [
-    "AEmiApi",
-    "MEmiPlayerInventory",
-    "MGTRecipeTypeEmiCategory",
-    "GTMEmiRewrite",
-    "MGTOreProcessingEmiCategory"
-  ],
+  "mixins": ["AEmiApi", "GTMEmiRewrite", "MEmiPlayerInventory", "MGTOreProcessingEmiCategory", "MGTRecipeTypeEmiCategory"],
   "client": [
+    "ARecipeScreen"
   ],
   "injectors": {
     "defaultRequire": 1
